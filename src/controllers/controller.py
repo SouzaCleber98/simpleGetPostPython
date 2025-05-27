@@ -1,8 +1,8 @@
 from flask import request
 from psycopg2.extras import RealDictCursor
 from src.database.db import connect_to_db
-FORM = 'name' # Substitua pelo nome do campo do formulário que você deseja capturar
-TABLE = 'public.guestbook'  # Substitua pelo nome da sua tabela
+FORM = '' # Substitua pelo nome do campo do formulário que você deseja capturar
+TABLE = ''  # Substitua pelo nome da sua tabela
 query = f"SELECT * FROM {TABLE}"
 
 def get_form_data():
