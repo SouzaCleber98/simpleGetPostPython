@@ -1,5 +1,5 @@
-from flask import Blueprint
-from src.controllers.controller import get_form_data
+from flask import Blueprint, jsonify
+from src.controllers.controller import get_form_data, get_db_data
 routes = Blueprint('routes', __name__)
 
 ROUTE_POST = '/'
@@ -15,4 +15,7 @@ def post_response():
     
 @routes.route(ROUTE_GET, methods=['GET'])
 def get_response():
-    return "This is a GET response", 200
+    status, data = get_db_data()
+    if status != 200:
+        return "Failed to retrieve data from the database", 500
+    return jsonify(data), 200
