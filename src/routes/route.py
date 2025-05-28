@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from src.controllers.controller import get_form_data, get_db_data
+from src.controllers.controller import get_post_data, get_db_data
 routes = Blueprint('routes', __name__)
 
 ROUTE_POST = '/'
@@ -7,7 +7,7 @@ ROUTE_GET = '/'
 
 @routes.route(ROUTE_POST, methods=['POST'])
 def post_response():
-    status, data = get_form_data()
+    status, data = get_post_data()
     if status == 200:
         return f"Form data received successfully: {data}", 200
     else:
