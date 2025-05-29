@@ -42,25 +42,32 @@ DB_PASS=senha
 
 ## Funções importantes 
 
-### Controller
+### 📂 Controller
 
- `src/controllers/controller.py` — lógica de manipulação e inserção dos dados.
-![Funções controller](assets\imgs\codeController00.png)
-- [Funções Controller](assets\functions\functionsController.md)
+`src/controllers/controller.py` — lógica de manipulação e inserção dos dados.  
+![Funções controller](assets/imgs/codeController00.png)  
+🔗 [Documentação das funções do Controller](assets/functions/functionsController.md)
 
+---
 
-### Database
+### 🗄️ Database
 
-`src/database/db.py` — conexão com o banco PostgreSQL.
-![Funções database](assets\imgs\codeDatabase00.png)
-- [Funções Database](assets\functions\functionsDatabase.md)
+`src/database/db.py` — conexão com o banco PostgreSQL.  
+![Funções database](assets/imgs/codeDatabase00.png)  
+🔗 [Documentação das funções de Database](assets/functions/functionsDatabase.md)
 
-### Routes
+---
 
-`src/routes/route.py` — rotas HTTP.
-![Funções routes](assets\imgs\codeRoutes00.png)
-- [Funções routes](assets\functions\functionsRoutes.md)
-Obs: Altere as rotas para o seu uso
+### 🌐 Routes
+
+`src/routes/route.py` — rotas HTTP.  
+![Funções routes](assets/imgs/codeRoutes00.png)  
+🔗 [Documentação das funções de Routes](assets/functions/functionsRoutes.md)
+
+---
+
+> ℹ️ Obs: ajuste os caminhos conforme a estrutura final do seu projeto.
+
 
 ---
 
