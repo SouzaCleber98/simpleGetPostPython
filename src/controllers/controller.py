@@ -4,10 +4,11 @@ from src.database.db import connect_to_db
 form = '' 
 table = ''  
 query = ''
+column = ''
 
 def get_post_data():
 
-    form = 'data' # nome do campo que você deseja obter do formulário
+    form = '' # nome do campo que você deseja obter do formulário
     data = request.form.get(form)  # pega o valor do campo 
     if not data:
         return 400, None
@@ -15,8 +16,9 @@ def get_post_data():
     try:
         conn = connect_to_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        table = 'public.content'  # nome da tabela que você deseja consultar
-        query = f"INSERT INTO {table} (body) VALUES (%s) RETURNING id, body;" # consulta SQL para obter todos os dados da tabela
+        table = ''  # nome da tabela que você deseja consultar
+        column = ''  # nome da coluna onde você deseja inserir os dados
+        query = f"INSERT INTO {table} ({column}) VALUES (%s) RETURNING id, {column};" # consulta SQL para inserir dados na tabela
         cursor.execute(query, (data,)) 
         result = cursor.fetchone()
         conn.commit()  # confirma a transação
